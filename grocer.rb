@@ -22,7 +22,7 @@ def apply_coupons(cart, coupons)
   coupons.each do|coupon_hash| 
     item = coupon_hash[:item]
     
-    if !new_cart[item] == nil && new_cart[item][:count] >= coupon_hash[:num]
+    if !new_cart[item].nil? && new_cart[item][:count] >= coupon_hash[:num]
       
       clearance = {"#{item} W/COUPON" => {
           :price => coupon_hash[:cost],
