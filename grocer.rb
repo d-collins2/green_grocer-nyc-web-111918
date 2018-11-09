@@ -20,6 +20,7 @@ def apply_coupons(cart, coupons)
   p coupons
   coupons.each do|coupons_hash| 
     item = coupons_hash[:item]
+    
     if !new_cart[item] == nil && cart[item][:count] >= coupons_hash[:num]
       
       clearance = {"#{item} W/COUPON" => {
