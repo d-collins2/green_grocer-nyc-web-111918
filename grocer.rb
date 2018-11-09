@@ -19,20 +19,24 @@ def apply_coupons(cart, coupons)
   new_cart = cart
   p coupons
   coupons.each do|coupons_hash| 
-  item = coupons_hash[:item]
-  if cart.include?(item) && cart[item][:count] >= coupons_hash[:num]
-    clearance = {"#{item} W/COUPON" => {
-        :price => coupon_hash[:cost],
-        :clearance => new_cart[item][:clearance],
-        :count => 1
+    item = coupons_hash[:item]
+    if cart.include?(item) && cart[item][:count] >= coupons_hash[:num]
+      
+      clearance = {"#{item} W/COUPON" => {
+          :price => coupon_hash[:cost],
+          :clearance => new_cart[item][:clearance],
+          :count => 1
+          }
         }
-      }
-      if new_cart["#{item} W/COUPON"] == nil 
-        new_cart.merge(clearance)
-      else 
-        new_cart["#{item} W/COUPON"][:count] += 1 
-      end 
+          if new_cart["#{item} W/COUPON"] == nil 
+            new_cart.merge(clearance)
+          else 
+            new_cart["#{item} W/COUPON"][:count] += 1 
+          end 
+      new_cart[item][:count] -= coupon_hash[:num]
     end 
+  end
+  new_cart
 end
 
 def apply_clearance(cart)
