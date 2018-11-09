@@ -28,11 +28,11 @@ def apply_coupons(cart, coupons)
           :count => 1
           }
         }
-          if new_cart["#{item} W/COUPON"] == nil 
-            new_cart.merge!(clearance)
-          else 
-            new_cart["#{item} W/COUPON"][:count] += 1 
-          end 
+      if new_cart["#{item} W/COUPON"] == nil 
+        new_cart.merge!(clearance)
+      else 
+        new_cart["#{item} W/COUPON"][:count] += 1 
+      end 
       new_cart[item][:count] -= coupon_hash[:num]
     end 
   end
