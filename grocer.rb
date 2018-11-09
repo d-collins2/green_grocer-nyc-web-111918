@@ -60,7 +60,7 @@ def checkout(cart, coupons)
   cart_total = 0 
   
   update.each do |item, data| 
-    
+    cart_total += data[:price] * data[:count]
   end 
   
   cart_total > 100 ? cart_total * 0.9 : cart_total
