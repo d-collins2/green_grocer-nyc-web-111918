@@ -23,7 +23,7 @@ def apply_coupons(cart, coupons)
     if cart.include?(item) && cart[item][:count] >= coupons_hash[:num]
       
       clearance = {"#{item} W/COUPON" => {
-          :price => coupon_hash[:cost],
+          :price => coupons_hash[:cost],
           :clearance => new_cart[item][:clearance],
           :count => 1
           }
