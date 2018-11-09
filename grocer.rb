@@ -31,7 +31,7 @@ def apply_coupons(cart, coupons)
           }
         }
       
-      if new_cart["#{item} W/COUPON"] == nil 
+      if new_cart["#{item} W/COUPON"].nil? 
         new_cart.merge!(clearance)
       else 
         new_cart["#{item} W/COUPON"][:count] += 1 
