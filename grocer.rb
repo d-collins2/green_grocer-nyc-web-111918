@@ -56,4 +56,16 @@ def checkout(cart, coupons)
   cart = consolidate_cart(cart)
   new_cart = apply_coupons(cart, coupons)
   p update = apply_clearance(new_cart)
+  
+  cart_total = 0 
+  
+  update.each do |item, data| 
+    
+  end 
+  
+  if cart_total > 100 
+    cart_total * 0.9 
+  else 
+    cart_total
+  end 
 end
