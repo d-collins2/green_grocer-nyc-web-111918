@@ -46,8 +46,8 @@ def apply_clearance(cart)
   cart.each do |item, data| 
     data.each do |data_type, amount| 
       if cart[item][:clearance] == true
-        price = cart[item][:price]
-        cart[item][:price] == price * .8
+       p price = cart[item][:price]
+        cart[item][:price] == price 
       end 
     end 
   end 
