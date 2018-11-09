@@ -33,7 +33,7 @@ def apply_coupons(cart, coupons)
           else 
             new_cart["#{item} W/COUPON"][:count] += 1 
           end 
-      new_cart[item][:count] -= coupon_hash[:num]
+      new_cart[item][:count] -= coupons_hash[:num]
     end 
   end
   new_cart
